@@ -11,4 +11,9 @@
         android:title="Chat"
         app:showAsAction="never"/>
 
+    <item
+        android:id="@+id/item3"
+        android:title="Créditos"
+        app:showAsAction="never"/>
+
 </menu>

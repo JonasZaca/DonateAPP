@@ -13,6 +13,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".Intermedia"></activity>
         <activity android:name=".Carregamento" />
+        <activity android:name=".Consideracao" />
         <activity android:name=".Doacao" />
         <activity android:name=".MainActivity" />
         <activity android:name=".Logando">

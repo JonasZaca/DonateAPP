@@ -40,6 +40,10 @@ public class Intermedia extends AppCompatActivity {
                 Intent intent2 = new Intent(this, MainActivity.class);
                 startActivity(intent2);
                 return true;
+            case R.id.item3:
+                Intent intent3 = new Intent(this, Consideracao.class);
+                startActivity(intent3);
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
