@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity implements RoomListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        editText = findViewById(R.id.editText);
+        editText = findViewById(R.id.edtDescri);
         messagesView = findViewById(R.id.messages_view);
         bla();
     }

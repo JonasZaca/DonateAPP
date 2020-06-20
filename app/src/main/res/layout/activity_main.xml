@@ -23,7 +23,7 @@
         android:orientation="horizontal">
 
         <EditText
-            android:id="@+id/editText"
+            android:id="@+id/edtDescri"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="2"

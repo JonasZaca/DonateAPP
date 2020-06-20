@@ -148,7 +148,7 @@ public class TestandoApp {
         Thread.sleep(4000);
 
         ViewInteraction appCompatEditText7 = onView(
-                allOf(withId(R.id.editText),
+                allOf(withId(R.id.edtDescri),
                         childAtPosition(
                                 childAtPosition(
                                         withClassName(is("android.widget.LinearLayout")),
@@ -171,7 +171,7 @@ public class TestandoApp {
         Thread.sleep(4000);
 
         ViewInteraction appCompatEditText8 = onView(
-                allOf(withId(R.id.editText),
+                allOf(withId(R.id.edtDescri),
                         childAtPosition(
                                 childAtPosition(
                                         withClassName(is("android.widget.LinearLayout")),
@@ -235,7 +235,7 @@ public class TestandoApp {
         Thread.sleep(2000);
 
         ViewInteraction appCompatButton5 = onView(
-                allOf(withId(R.id.btnDepositar), withText("Depositar"),
+                allOf(withId(R.id.btnDoar), withText("Depositar"),
                         childAtPosition(
                                 childAtPosition(
                                         withId(android.R.id.content),

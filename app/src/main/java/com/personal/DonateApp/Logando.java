@@ -27,7 +27,7 @@ public class Logando extends AppCompatActivity {
                 EditText editPass = findViewById(R.id.editPass);
                 String user = editUser.getText().toString();
                 String pass = editPass.getText().toString();
-                if (user.equals("adm@doacao.com") && pass.equals("12345")){
+                if (user.equals("") && pass.equals("")){
                     Toast.makeText(Logando.this, "Login Realizado com sucesso", Toast.LENGTH_SHORT).show();
                     Intent intente = new Intent(Logando.this, Carregamento.class);
                     startActivity(intente);

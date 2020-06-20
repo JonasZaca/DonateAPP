@@ -1,122 +1,116 @@
 package com.personal.DonateApp;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
-import android.os.PersistableBundle;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.os.Bundle;
-import android.view.View;
-import android.widget.EditText;
-import android.widget.ListView;
-
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.scaledrone.lib.Listener;
-import com.scaledrone.lib.Message;
-import com.scaledrone.lib.Room;
-import com.scaledrone.lib.RoomListener;
-import com.scaledrone.lib.Scaledrone;
-
-import java.util.Random;
-
 public class Doacao extends AppCompatActivity {
 
-    double valor,saldo = 0;
+    RadioGroup radioGroup;
+
+    RadioButton radioButton;
+
+    Button btnDoar;
+
+    EditText edtValor;
+    EditText edtDescri;
+
+    Double valor;
+    int selecao;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doacao);
 
-        TextView viewSaldo = (TextView)findViewById(R.id.txtSaldo);
+        edtValor = findViewById(R.id.edtValor);
+        edtDescri = findViewById(R.id.edtDescri);
 
-        final EditText edtValor = (EditText)findViewById(R.id.edtxtValor);
+        radioGroup = findViewById(R.id.radioGroup);
 
-        Button btnDoar = (Button)findViewById(R.id.btnDoar);
-        Button btnDepositar = (Button)findViewById(R.id.btnDepositar);
+        btnDoar = findViewById(R.id.btnDoar);
 
-        viewSaldo.setText("Saldo R$: "+saldo);
+        edtValor.setEnabled(false);
+        edtDescri.setEnabled(false);
+        selecao = 0;
+
+    }
+
+    public void checkButton(View v){
+
+        int radioId = radioGroup.getCheckedRadioButtonId();
+
+        radioButton = findViewById(radioId);
+
+        if(radioId == 2131165321){
+            edtValor.setEnabled(true);
+            edtDescri.setEnabled(false);
+            edtValor.setHint("Valor:");
+            edtDescri.setHint("");
+            selecao = 1;
+        }
+
+        if(radioId == 2131165322){
+            edtValor.setEnabled(true);
+            edtDescri.setEnabled(true);
+            edtValor.setHint("Quantidade:");
+            edtDescri.setHint("Qual produto você vai doar:");
+            selecao = 2;
+        }
+
+    }
+
+    public void clickButton(View v){
 
         btnDoar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(edtValor.length() == 0){
-                    edtValor.setError("Insira algum valor");
-                }else{
+                if(selecao == 0){
 
-                    valor = Double.parseDouble(edtValor.getText().toString());
+                    Context context1 = getApplicationContext();
 
-                    if( saldo < valor || 0 >= saldo || valor <= 0){
+                    CharSequence text1 = "Selecione uma opção de doação !";
+                    int duration1 = Toast.LENGTH_LONG;
 
-                        Context context = getApplicationContext();
+                    Toast toast1 = Toast.makeText(context1, text1, duration1);
+                    toast1.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
+                    toast1.show();
 
-                        CharSequence text = "Saldo incompatível, deposite mais ! ";
-                        int duration = Toast.LENGTH_LONG;
-
-                        Toast toast = Toast.makeText(context, text, duration);
-                        toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
-                        toast.show();
-                        edtValor.setText("");
-
-                    }
-                    else{
-                        Context context = getApplicationContext();
-
-                        CharSequence text = "Doação realizado com sucesso ! " + edtValor.getText();
-                        int duration = Toast.LENGTH_LONG;
-
-                        Toast toast = Toast.makeText(context, text, duration);
-                        toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
-                        toast.show();
-
-                        saldo = (saldo - Double.parseDouble(edtValor.getText().toString()));
-
-                        TextView viewSaldo = (TextView)findViewById(R.id.txtSaldo);
-                        viewSaldo.setText("Saldo R$: "+saldo);
-                        edtValor.setText("");
-
-                    }
+                    edtValor.setText("");
+                    edtDescri.setText("");
 
                 }
-            }
-        });
-
-        btnDepositar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(edtValor.length() == 0){
-                    edtValor.setError("Insira algum valor");
-                }else{
-
-                    valor = Double.parseDouble(edtValor.getText().toString());
+                else if(edtValor.length() == 0){
+                    edtValor.setError("Insira algum valor valido !");
+                }
+                else if(Double.parseDouble(edtValor.getText().toString()) == 0){
+                    edtValor.setError("Insira algum valor valido !");
+                }
+                else if(edtDescri.length() == 0 && selecao == 2){
+                    edtDescri.setError("Descreva o qu você vai doar !");
+                }
+                else{
 
                     Context context = getApplicationContext();
 
-                    CharSequence text = "Deposito realizado com sucesso ! " + edtValor.getText();
+                    CharSequence text = "Doação realizada com sucesso !";
                     int duration = Toast.LENGTH_LONG;
 
                     Toast toast = Toast.makeText(context, text, duration);
                     toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
                     toast.show();
 
-                    saldo = (saldo + Double.parseDouble(edtValor.getText().toString()));
-
-                    TextView viewSaldo = (TextView)findViewById(R.id.txtSaldo);
-                    viewSaldo.setText("Saldo R$: "+saldo);
                     edtValor.setText("");
+                    edtDescri.setText("");
 
                 }
             }
