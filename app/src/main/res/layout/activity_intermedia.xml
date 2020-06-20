@@ -8,31 +8,6 @@
     android:background="@drawable/bg"
     tools:context="com.personal.DonateApp.Intermedia">
 
-    <Button
-        android:id="@+id/btDoar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="76dp"
-        android:background="@drawable/botao_customizado"
-        android:text="Doar"
-        android:onClick="Doando"
-        app:layout_constraintBottom_toBottomOf="@+id/btChat"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/btChat"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <Button
-        android:id="@+id/btChat"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="88dp"
-        android:onClick="ChatAberto"
-        android:layout_marginBottom="264dp"
-        android:background="@drawable/botao_customizado"
-        android:text="Chat"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
@@ -43,4 +18,5 @@
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="267dp"
         tools:ignore="MissingConstraints" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
