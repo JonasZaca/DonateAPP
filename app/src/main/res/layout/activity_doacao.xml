@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/tela_um"
-    tools:context=".Doacao">
+    tools:context=".DoacaoActicity">
 
     <Button
         android:id="@+id/btnDoar"

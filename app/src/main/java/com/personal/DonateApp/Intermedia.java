@@ -8,11 +8,6 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
 
 public class Intermedia extends AppCompatActivity {
 
@@ -33,7 +28,7 @@ public class Intermedia extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case R.id.item1:
-                Intent intent = new Intent(this, Doacao.class);
+                Intent intent = new Intent(this, DoacaoActicity.class);
                 startActivity(intent);
                 return true;
             case R.id.item2:
