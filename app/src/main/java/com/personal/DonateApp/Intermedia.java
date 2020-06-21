@@ -37,7 +37,7 @@ public class Intermedia extends AppCompatActivity {
                 startActivity(intent);
                 return true;
             case R.id.item2:
-                Intent intent2 = new Intent(this, MainActivity.class);
+                Intent intent2 = new Intent(this, ChatActivity.class);
                 startActivity(intent2);
                 return true;
             case R.id.item3:

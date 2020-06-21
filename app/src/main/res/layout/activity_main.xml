@@ -5,8 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:clipToPadding="false"
-    android:focusableInTouchMode="true"
-    tools:context=".MainActivity">
+    android:focusableInTouchMode="true">
 
     <ListView
         android:layout_width="match_parent"

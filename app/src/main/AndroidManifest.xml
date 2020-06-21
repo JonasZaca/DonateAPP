@@ -14,6 +14,10 @@
         <activity android:name=".Intermedia"></activity>
         <activity android:name=".Carregamento" />
         <activity android:name=".Consideracao" />
+        <activity android:name=".ChatActivity" />
+        <activity android:name=".ContactsActivity" />
+        <activity android:name=".MessagesActivity" />
+        <activity android:name=".RegisterActivity" />
         <activity android:name=".Doacao" />
         <activity android:name=".MainActivity" />
         <activity android:name=".Logando">

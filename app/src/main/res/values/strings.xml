@@ -1,4 +1,12 @@
 <resources>
+    <string name="Enter">Entrar</string>
+    <string name="signIn">Não tem uma conta? Crie aqui!</string>
+    <string name="insert">Cadastrar</string>
+    <string name="photo">Foto</string>
+    <string name="contacts">Contatos</string>
+    <string name="logout">Logout</string>
+    <string name="btn_chat">Enviar</string>
+    <string name="message">Digite a mensagem</string>
     <string name="app_name">DonateApp</string>
     <string name="input_placeholder">Write a message</string>
     <string name="about">About</string>
